@@ -6,6 +6,8 @@ with sync_playwright() as p:
     page.goto("https://authorized-partner.vercel.app/")
     #page.get_by_text("Get Started").click()
     page.get_by_role("link", name="Get Started").click()
+    page.get_by_role("checkbox").check()
+    page.get_by_role("button", name="Continue").click()
 
     page.wait_for_timeout(10000)  # wait 10 seconds so that the page is loaded completely
 
