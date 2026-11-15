@@ -13,8 +13,8 @@ with sync_playwright() as p:
     ##setup account
     page.get_by_placeholder("Enter Your First Name").fill("Kuber")
     page.get_by_placeholder("Enter Your Last Name").fill("Rana")
-    page.get_by_placeholder("Enter Your Email").fill("nerepod130@chuwel.com")
-    page.get_by_placeholder("00-00000000").fill("9812701223")
+    page.get_by_placeholder("Enter Your Email").fill("gotas85388@chuwel.com")
+    page.get_by_placeholder("00-00000000").fill("9812702323")
 
     # page.get_by_label("Password", exact=True).fill("Kuber@123")
     # page.get_by_label("Confirm Password").fill("Kuber@123")
@@ -44,7 +44,7 @@ with sync_playwright() as p:
     page.get_by_text("Select Your Experience Level").click()
     page.locator('[role="option"]').first.click()
 
-    page.get_by_placeholder("Enter an approximate number.").fill("150")
+    page.get_by_placeholder("Enter an approximate number.").fill("200")
     page.get_by_placeholder("E.g., Undergraduate admissions to Canada.").fill("Undergraduate admissions to Canada.")
     page.get_by_placeholder("E.g., 90%").fill("90")
 
@@ -53,7 +53,22 @@ with sync_playwright() as p:
     page.get_by_text("Visa Processing").click()
 
     page.get_by_role("button", name="Next").click()
-    
+
+
+    #final page(Verification and preferences)
+    # Step 4: Verification and Preferences
+    page.get_by_placeholder("Enter your registration number").fill("123")
+
+    page.get_by_text("Select Your Preferred Countries").click()
+    page.get_by_text("Eleven").click()
+    # page.keyboard.press("Escape")
+
+    page.get_by_text("Colleges").click()
+
+    page.get_by_placeholder("E.g., ICEF Certified Education Agent").fill("ICEF Certified Education Agent")
+
+    page.locator('input[type="file"]').first.set_input_files("doc.docx")
+    page.get_by_role("button", name="Submit").click()
     
    
     page.wait_for_timeout(20000)  # wait 10 seconds so that the page is loaded completely
