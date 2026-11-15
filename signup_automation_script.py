@@ -13,8 +13,8 @@ with sync_playwright() as p:
     ##setup account
     page.get_by_placeholder("Enter Your First Name").fill("Kuber")
     page.get_by_placeholder("Enter Your Last Name").fill("Rana")
-    page.get_by_placeholder("Enter Your Email").fill("deyoc58889@fulldiets.com")
-    page.get_by_placeholder("00-00000000").fill("9812700022")
+    page.get_by_placeholder("Enter Your Email").fill("nerepod130@chuwel.com")
+    page.get_by_placeholder("00-00000000").fill("9812701223")
 
     # page.get_by_label("Password", exact=True).fill("Kuber@123")
     # page.get_by_label("Confirm Password").fill("Kuber@123")
@@ -38,10 +38,23 @@ with sync_playwright() as p:
 
     page.get_by_text("Select Your Region of Operation").click()
     page.get_by_text("Nepal").click()
+    page.get_by_role("button", name="Next").click()
+
+    #next page (professional experience)
+    page.get_by_text("Select Your Experience Level").click()
+    page.locator('[role="option"]').first.click()
+
+    page.get_by_placeholder("Enter an approximate number.").fill("150")
+    page.get_by_placeholder("E.g., Undergraduate admissions to Canada.").fill("Undergraduate admissions to Canada.")
+    page.get_by_placeholder("E.g., 90%").fill("90")
+
+    page.get_by_text("Career Counseling").click()
+    page.get_by_text("Admission Applications").click()
+    page.get_by_text("Visa Processing").click()
 
     page.get_by_role("button", name="Next").click()
+    
+    
    
-
     page.wait_for_timeout(20000)  # wait 10 seconds so that the page is loaded completely
-
     browser.close()
