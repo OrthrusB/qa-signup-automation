@@ -55,7 +55,7 @@ with sync_playwright() as p:
     page.get_by_role("button", name="Next").click()
 
 
-    #final page(Verification and preferences)
+    #final page(Verification and preferences )
     # Step 4: Verification and Preferences
     page.get_by_placeholder("Enter your registration number").fill("123")
 
