@@ -13,8 +13,8 @@ with sync_playwright() as p:
     ##setup account
     page.get_by_placeholder("Enter Your First Name").fill("Kuber")
     page.get_by_placeholder("Enter Your Last Name").fill("Rana")
-    page.get_by_placeholder("Enter Your Email").fill("gotas85388@chuwel.com")
-    page.get_by_placeholder("00-00000000").fill("9812702323")
+    page.get_by_placeholder("Enter Your Email").fill("defon53579@chuwel.com")
+    page.get_by_placeholder("00-00000000").fill("9812702399")
 
     # page.get_by_label("Password", exact=True).fill("Kuber@123")
     # page.get_by_label("Confirm Password").fill("Kuber@123")
